@@ -11,11 +11,14 @@ import edu.iis.mto.bsearch.SearchResult;
 public class BinarySearchTest {
 
     int[] oneElement;
+    int[] manyElements;
 
     @Before
     public void setup() {
         int[] oneElementInitializer = {5};
         oneElement = oneElementInitializer;
+        int[] manyElementsInitializer = {2, 5, 6, 9, 3};
+        manyElements = manyElementsInitializer;
     }
 
     @Test
@@ -29,5 +32,12 @@ public class BinarySearchTest {
     public void elementIsNotInSequence() {
         SearchResult searchResult = BinarySearch.search(4, oneElement);
         assertEquals(searchResult.isFound(), false);
+    }
+
+    @Test
+    public void elementIsFirstInSequence() {
+        SearchResult searchResult = BinarySearch.search(2, manyElements);
+        assertEquals(searchResult.isFound(), true);
+        assertEquals(searchResult.getPosition(), 1);
     }
 }
