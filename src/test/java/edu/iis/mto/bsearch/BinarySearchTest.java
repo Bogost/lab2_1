@@ -54,4 +54,10 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(8, manyElements);
         assertThat(searchResult.isFound(), Matchers.comparesEqualTo(false));
     }
+
+    @Test
+    public void ifElementIsNotInSequenceReturnsPositionMinusOne() {
+        SearchResult searchResult = BinarySearch.search(8, manyElements);
+        assertThat(searchResult.getPosition(), Matchers.comparesEqualTo(-1));
+    }
 }
