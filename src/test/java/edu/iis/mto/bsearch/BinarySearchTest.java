@@ -46,10 +46,8 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsInMiddleOfSequence() {
-        SearchResult searchResult = BinarySearch.search(6, manyElements);
-        // System.out.println(searchResult);
-        assertEquals(searchResult.isFound(), true);
-        assertEquals(searchResult.getPosition(), 3);
+        SearchResult searchResult = BinarySearch.search(manyElements[2], manyElements);
+        assertThat(manyElements[searchResult.getPosition()], Matchers.comparesEqualTo(manyElements[2]));
     }
 
     @Test
