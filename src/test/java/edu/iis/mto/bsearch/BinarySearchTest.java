@@ -1,6 +1,5 @@
 package edu.iis.mto.bsearch;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 import org.hamcrest.Matchers;
@@ -53,6 +52,6 @@ public class BinarySearchTest {
     @Test
     public void elementIsNotInMultiElementalSequence() {
         SearchResult searchResult = BinarySearch.search(8, manyElements);
-        assertEquals(searchResult.isFound(), false);
+        assertThat(searchResult.isFound(), Matchers.comparesEqualTo(false));
     }
 }
