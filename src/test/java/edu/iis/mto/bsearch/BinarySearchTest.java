@@ -40,9 +40,8 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsLastInSequence() {
-        SearchResult searchResult = BinarySearch.search(13, manyElements);
-        assertEquals(searchResult.isFound(), true);
-        assertEquals(searchResult.getPosition(), manyElements.length);
+        SearchResult searchResult = BinarySearch.search(manyElements[manyElements.length - 1], manyElements);
+        assertThat(manyElements[searchResult.getPosition()], Matchers.comparesEqualTo(manyElements[manyElements.length - 1]));
     }
 
     @Test
