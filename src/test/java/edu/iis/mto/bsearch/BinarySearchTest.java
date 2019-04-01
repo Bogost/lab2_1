@@ -29,7 +29,7 @@ public class BinarySearchTest {
     @Test
     public void elementIsNotInSequence() {
         SearchResult searchResult = BinarySearch.search(4, oneElement);
-        assertEquals(searchResult.isFound(), false);
+        assertThat(searchResult.isFound(), Matchers.comparesEqualTo(false));
     }
 
     @Test
