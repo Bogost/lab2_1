@@ -1,12 +1,11 @@
 package edu.iis.mto.bsearch;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
+import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
-
-import edu.iis.mto.bsearch.BinarySearch;
-import edu.iis.mto.bsearch.SearchResult;
 
 public class BinarySearchTest {
 
@@ -23,9 +22,8 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsInSequence() {
-        SearchResult searchResult = BinarySearch.search(5, oneElement);
-        assertEquals(searchResult.isFound(), true);
-        assertEquals(searchResult.getPosition(), 1);
+        SearchResult searchResult = BinarySearch.search(oneElement[0], oneElement);
+        assertThat(searchResult.isFound(), Matchers.comparesEqualTo(true));
     }
 
     @Test
