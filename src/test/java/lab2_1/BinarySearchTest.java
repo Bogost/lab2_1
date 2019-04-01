@@ -25,4 +25,9 @@ public class BinarySearchTest {
         assertEquals(searchResult.getPosition(), 1);
     }
 
+    @Test
+    public void elementIsNotInSequence() {
+        SearchResult searchResult = BinarySearch.search(4, oneElement);
+        assertEquals(searchResult.isFound(), false);
+    }
 }
