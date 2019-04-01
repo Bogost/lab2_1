@@ -34,9 +34,8 @@ public class BinarySearchTest {
 
     @Test
     public void elementIsFirstInSequence() {
-        SearchResult searchResult = BinarySearch.search(2, manyElements);
-        assertEquals(searchResult.isFound(), true);
-        assertEquals(searchResult.getPosition(), 1);
+        SearchResult searchResult = BinarySearch.search(manyElements[0], manyElements);
+        assertThat(manyElements[searchResult.getPosition()], Matchers.comparesEqualTo(manyElements[0]));
     }
 
     @Test
