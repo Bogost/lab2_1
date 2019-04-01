@@ -55,4 +55,10 @@ public class BinarySearchTest {
         assertEquals(searchResult.isFound(), true);
         assertEquals(searchResult.getPosition(), 3);
     }
+
+    @Test
+    public void elementIsNotInMultiElementalSequence() {
+        SearchResult searchResult = BinarySearch.search(8, manyElements);
+        assertEquals(searchResult.isFound(), false);
+    }
 }
