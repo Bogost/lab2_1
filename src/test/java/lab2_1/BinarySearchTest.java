@@ -17,7 +17,7 @@ public class BinarySearchTest {
     public void setup() {
         int[] oneElementInitializer = {5};
         oneElement = oneElementInitializer;
-        int[] manyElementsInitializer = {2, 5, 6, 9, 3};
+        int[] manyElementsInitializer = {2, 5, 6, 9, 13};
         manyElements = manyElementsInitializer;
     }
 
@@ -39,5 +39,13 @@ public class BinarySearchTest {
         SearchResult searchResult = BinarySearch.search(2, manyElements);
         assertEquals(searchResult.isFound(), true);
         assertEquals(searchResult.getPosition(), 1);
+    }
+
+    @Test
+    public void elementIsLastInSequence() {
+        SearchResult searchResult = BinarySearch.search(13, manyElements);
+        // System.out.println(searchResult);
+        assertEquals(searchResult.isFound(), true);
+        assertEquals(searchResult.getPosition(), manyElements.length);
     }
 }
