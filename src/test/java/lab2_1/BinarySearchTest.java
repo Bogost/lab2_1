@@ -44,8 +44,15 @@ public class BinarySearchTest {
     @Test
     public void elementIsLastInSequence() {
         SearchResult searchResult = BinarySearch.search(13, manyElements);
-        // System.out.println(searchResult);
         assertEquals(searchResult.isFound(), true);
         assertEquals(searchResult.getPosition(), manyElements.length);
+    }
+
+    @Test
+    public void elementIsInMiddleOfSequence() {
+        SearchResult searchResult = BinarySearch.search(6, manyElements);
+        // System.out.println(searchResult);
+        assertEquals(searchResult.isFound(), true);
+        assertEquals(searchResult.getPosition(), 3);
     }
 }
