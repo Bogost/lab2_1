@@ -1,4 +1,4 @@
-package lab2_1;
+package edu.iis.mto.bsearch;
 
 import static org.junit.Assert.assertEquals;
 
